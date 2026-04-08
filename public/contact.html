@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Reincal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img src="image/tp.png" alt="Reincal Logo">
+          <span>Reincal</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="https://saweria.co/AlvinJumz" class="nav-link" target="_blank">Donate</a>
+          <a href="/contact" class="nav-link active">Contact</a>
+          
+          <div class="social-links">
+            <a href="https://discord.gg/" class="social-link" target="_blank">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://twitter.com/ZarcoZxacy" class="social-link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>Have a question or want to work together? Fill out the form or reach out directly through one of these methods.</p>
+          </div>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email Me</h3>
+                <a href="mailto:jackgrizz23@gmail.com">jackgrizz23@gmail.com</a> or <a href="mailto:zarcoxorp@gmail.com">zarcoxorp@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fab fa-discord"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Discord</h3>
+                <p>Join my server or DM me</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Twitter</h3>
+                <a href="https://twitter.com/ZarcoZxacy" target="_blank">@ZarcoZxacy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-container" data-aos="fade-left" data-aos-delay="100">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
+              <label for="name" class="form-label">Your Name</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
+              <label for="email" class="form-label">Your Email</label>
+            </div>
+            
+            <div class="form-group">
+              <textarea class="form-input" id="message" name="message" placeholder=" " required></textarea>
+              <label for="message" class="form-label">Your Message</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span id="submit-text">Send Message</span>
+              <div class="loader" id="form-loader" style="display: none;"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Status Message -->
+  <div class="status-message" id="status-message">
+    <i class="fas fa-check-circle"></i>
+    <span id="status-text">Your message has been sent successfully!</span>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const submitText = document.getElementById('submit-text');
+    const formLoader = document.getElementById('form-loader');
+    const statusMessage = document.getElementById('status-message');
+    const statusText = document.getElementById('status-text');
+    const statusIcon = statusMessage.querySelector('i');
+    
+    // Handle floating labels
+    const inputs = document.querySelectorAll('.form-input');
+    const labels = document.querySelectorAll('.form-label');
+    
+    inputs.forEach((input, index) => {
+      // Check if input has value on page load
+      if (input.value) {
+        labels[index].classList.add('selected');
+      }
+      
+      // Handle focus
+      input.addEventListener('focus', () => {
+        labels[index].classList.add('selected');
+      });
+      
+      // Handle blur
+      input.addEventListener('blur', () => {
+        if (!input.value) {
+          labels[index].classList.remove('selected');
+        }
+      });
+      
+      // Handle input changes
+      input.addEventListener('input', () => {
+        if (input.value) {
+          labels[index].classList.add('selected');
+        } else {
+          labels[index].classList.remove('selected');
+        }
+      });
+    });
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      submitText.style.display = 'none';
+      formLoader.style.display = 'block';
+      
+      // Prepare form data
+      const formData = new FormData(contactForm);
+      
+      // Send form data to FormSubmit
+      fetch('https://formsubmit.co/ajax/jackgrizz23@gmail.com', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Show success message
+        statusMessage.classList.add('success', 'show');
+        statusIcon.className = 'fas fa-check-circle';
+        statusText.textContent = 'Your message has been sent successfully!';
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Reset labels
+        labels.forEach(label => label.classList.remove('selected'));
+      })
+      .catch(error => {
+        // Show error message
+        statusMessage.classList.add('error', 'show');
+        statusIcon.className = 'fas fa-exclamation-circle';
+        statusText.textContent = 'There was an error sending your message. Please try again.';
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        // Reset button state
+        submitText.style.display = 'block';
+        formLoader.style.display = 'none';
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          statusMessage.classList.remove('show');
+          setTimeout(() => {
+            statusMessage.classList.remove('success', 'error');
+          }, 300);
+        }, 5000);
+      });
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

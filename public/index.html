@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/768038699434508321/1356933967021998151/IMG_20250402_180907.png?ex=67ee5ebc&is=67ed0d3c&hm=26a641dacffba1bdc4364f19a8cabce7e1c7625213e5ffe76e6ebf911cd269b9&">
+    <title>Home - Reincal</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rein Website" />
+    <meta property="og:description" content="Hi, I'm Rein. This is my personal website. Not a scam." />
+    <meta property="og:image" content="/image/banner.png" />
+    <meta property="og:url" content="https://reincal.is-a.dev" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rein Website">
+    <meta name="twitter:description" content="Hi, I'm Kalrex and this is my personal website.">
+    <meta name="twitter:image" content="/image/banner.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/json/manifest.json">
+    
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="/" class="logo">
+                    <img src="image/tp.png" alt="Reincal Logo">
+                    <span>Reincal</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="https://ko-fi.com/raincal" class="nav-link" target="_blank">Donate</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    
+                    <div class="social-links">
+                        <a href="https://discord.gg/7dBxFQcfwZ" class="social-link" target="_blank">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://twitter.com/ZarcoZxacy" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <img src="image/rein.png" alt="Reincal" class="hero-avatar animate__animated animate__fadeIn">
+                <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Hey There, I'm</p>
+                <h1 class="hero-title text-gradient animate__animated animate__fadeIn animate__delay-1s">Reincalvin</h1>
+                
+                <div class="hero-meta animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="meta-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>College</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-mug-hot"></i>
+                        <span>Coffee</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-school"></i>
+                        <span>School</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Casual Gamer</span>
+                    </div>
+                </div>
+                
+                <p class="hero-description animate__animated animate__fadeIn animate__delay-2s">
+                    I'm Kalvin, 19 years old. A developer specialized in JavaScript/TypeScript, HTML, and Python. This website showcases my projects.
+                    I'm from <a href="https://media.discordapp.net/attachments/768038699434508324/1039087307015340032/images_1.jpg" target="_blank" style="color: var(--primary); text-decoration: none;">Indonesia</a>. 
+                    Built with HTML and CSS. Check out my open source work on <a href="https://github.com/Noctisvan" target="_blank" style="color: var(--primary); text-decoration: none;">GitHub</a>.
+                </p>
+                
+                <div class="status animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="status-dot status-loading"></div>
+                    <span id="statusContent">Loading status...</span>
+                </div>
+                
+                <div id="spotifyListening" class="animate__animated animate__fadeIn animate__delay-3s" style="margin-top: 0.5rem;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-subtitle">My Links</p>
+                <h2 class="section-title">My Personal Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <a href="https://pawmi.zone.id/" class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="image/pawmi.jpg" alt="Danilxlo Discord Bot" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Pawmi(Deprecated)</h3>
+                        <p class="project-description">
+                            Pawmi have a anonymous chat, confession system, autoresponder, welcomer embed, embedbuilder, fun, image manipulation in this one discord bot.
+                        </p>
+                    </div>
+                </a>
+                
+                <a href="/" class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="image/banner.jpg" alt="Linktree" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Linktree</h3>
+                        <p class="project-description">
+                            My own Linktree clone.
+                        </p>
+                    </div>
+                </a>
+                
+                <a href="https://discord.gg/" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="image/tp.png" alt="TorangPunya ID" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">TorangPunya ID(On Development)</h3>
+                        <p class="project-description">
+                            My community server based in my hometown.
+                        </p>
+                    </div>
+                </a>
+                
+                <a href="https://danilxlo.vercel.app/apix" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="image/twary.jpg" alt="TwaryAPI" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">TwaryAPI (On Development)</h3>
+                        <p class="project-description">
+                            My random quote API.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="career" id="career">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-subtitle">My Journey</p>
+                <h2 class="section-title">My Career</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3 class="timeline-title"><i class="fas fa-school"></i> Student Council</h3>
+                        <p class="timeline-description">Active member of the student council during high school at SMAN 1 Bitung.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="timeline-title"><i class="fas fa-briefcase"></i> Administrative Staff</h3>
+                        <p class="timeline-description">Worked as an administrative staff in a local fishery company (Marore Jaya).</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2024</span>
+                        <h3 class="timeline-title"><i class="fas fa-laptop"></i> Server Admin</h3>
+                        <p class="timeline-description">High-level admin for Kitsune online community, managing Discord servers and community events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote">
+        <div class="container">
+            <div class="quote-content" data-aos="zoom-in">
+                <p class="section-subtitle">Quote of the Day</p>
+                <p id="quote-text" class="quote-text">Loading quote...</p>
+                <p id="quote-author" class="quote-author"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <p class="footer-copyright">© 2022 - 2026 Reincalvin. All rights reserved.</p>
+                
+                <div class="footer-links">
+                    <a href="/" class="footer-link">Home</a>
+                    <a href="https://ko-fi.com/raincal" class="footer-link" target="_blank">Donate</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://x.com/kalvinzo?t=1IJFyAz7VmWYxf3-cTncPA&s=09" class="footer-social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/Noctisvan" class="footer-social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://youtube.com" class="footer-social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:zarcoxorp@gmail.com" class="footer-social-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="js/lanyard.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Fetch random quote
+        async function displayRandomQuote() {
+            try {
+                const response = await fetch("https://danilxlo.vercel.app/api/quoteid");
+                const json = await response.json();
+                const data = json.data;
+                document.getElementById("quote-text").innerText = `"${data.quotes}"`;
+                document.getElementById("quote-author").innerText = `— ${data.author || "Unknown"}`;
+            } catch (error) {
+                console.error("Failed to fetch quote:", error);
+                document.getElementById("quote-text").innerText = `"The only way to do great work is to love what you do."`;
+                document.getElementById("quote-author").innerText = "— Steve Jobs";
+            }
+        }
+        displayRandomQuote();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
