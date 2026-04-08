@@ -44,7 +44,6 @@ Reincal-main/
 │   ├── css/             # Styles (style.css, contact.css, 404.css)
 │   ├── js/              # Scripts
 │   │   ├── lanyard.js   # Discord/Spotify status
-│   │   └── main.js      # Form handling
 │   └── image/           # Assets
 ├── vercel.json          # Deployment config
 ├── README.md            # This file!
