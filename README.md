@@ -20,7 +20,7 @@ A modern, responsive personal portfolio website built with vanilla **HTML**, **C
 
 | Hero Section | Projects |
 |--------------|----------|
-| ![Hero](public/image/banner.jpg) | ![Projects](https://via.placeholder.com/400x250/dark/6366f1/ffffff?text=Projects) |
+| ![Hero](public/image/banner.png) | ![Projects](https://via.placeholder.com/400x250/dark/6366f1/ffffff?text=Projects) |
 
 ## 🚀 Quick Start
 
@@ -44,6 +44,7 @@ Reincal-main/
 │   ├── css/             # Styles (style.css, contact.css, 404.css)
 │   ├── js/              # Scripts
 │   │   ├── lanyard.js   # Discord/Spotify status
+│   │   └── main.js      # Form handling
 │   └── image/           # Assets
 ├── vercel.json          # Deployment config
 ├── README.md            # This file!
