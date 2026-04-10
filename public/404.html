@@ -14,7 +14,7 @@
 
   <main class="container">
     <section class="hero">
-      <img class="hero-image" src="image/404.png" alt="Astronaut floating in space"/>
+      <img class="hero-image" src="https://dc.missuo.ru/file/1492182344508112907" alt="Astronaut floating in space"/>
       <div class="hero-info">
         <h2 class="text text__title">Lost in Space?</h2>
         <p class="text text__description">The page you're looking for doesn't exist or was moved. Don't worry, we'll help you get back home safely.</p>
@@ -32,6 +32,18 @@
   </footer>
 
   <script>
+    let countdown = 5;
+  const btn = document.querySelector('.button');
+
+  const interval = setInterval(() => {
+    countdown--;
+    btn.innerHTML = `<i class="fas fa-arrow-left"></i> Back to Home (${countdown})`;
+
+    if (countdown <= 0) {
+      clearInterval(interval);
+      window.location.href = "/";
+    }
+  }, 1000);
     // Add a fun easter egg - confetti when clicking the astronaut
     const astronaut = document.querySelector('.hero-image');
     
