@@ -7,9 +7,11 @@ A modern, responsive personal portfolio website built with vanilla **HTML**, **C
 
 ## Versions
 
+# Branch reincal-v1.1
 ![version1.1](https://dc.missuo.ru/file/1492193625151635637)
 
 
+# Branch reincal-v1.2
 ![version1.2](https://dc.missuo.ru/file/1492193270787477727)
 
 ## 🙌 Credits
