@@ -5,6 +5,13 @@
 
 A modern, responsive personal portfolio website built with vanilla **HTML**, **CSS**, and **JavaScript**. Features real-time Discord status via [Lanyard](https://lanyard.rest/) and Spotify integration.
 
+## Versions
+
+![version1.1](https://dc.missuo.ru/file/1492193625151635637)
+
+
+![version1.2](https://dc.missuo.ru/file/1492193270787477727)
+
 ## 🙌 Credits
 
 - **Author:** Reincalvin (Natan)
