@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>404 Not Found | Reincal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="https://dc.missuo.ru/file/1492188322108407973">
+
+  <!-- FONT SAMA KAYAK INDEX -->
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/404.css">
+</head>
+
+<body>
+
   <header class="container">
-    <h1 class="text text__header">404 - Page Not Found</h1>
+    <h1 class="text__header">404 — Page Not Found</h1>
   </header>
 
   <main class="container">
     <section class="hero">
-      <img class="hero-image" src="image/404.png" alt="Astronaut floating in space"/>
+      <img class="hero-image" src="https://dc.missuo.ru/file/1492182344508112907" alt="Astronaut"/>
+
       <div class="hero-info">
-        <h2 class="text text__title">Lost in Space?</h2>
-        <p class="text text__description">The page you're looking for doesn't exist or was moved. Don't worry, we'll help you get back home safely.</p>
-        <a href="https://reincal.is-a.dev" class="button">
+        <h2 class="text__title">Lost in Space?</h2>
+        <p class="text__description">
+          The page you're looking for doesn't exist or was moved.
+        </p>
+         
+        <p style="font-size:0.9rem;color:var(--muted);">
+  Redirecting to home in <span id="count">5</span> seconds...
+</p>
+
+        <a href="/" class="button">
           <i class="fas fa-arrow-left"></i>
-          Return Home
+          Back to Home
         </a>
       </div>
     </section>
@@ -32,37 +48,42 @@
   </footer>
 
   <script>
-    // Add a fun easter egg - confetti when clicking the astronaut
+    let countdown = 5;
+  const btn = document.querySelector('.button');
+
+  const interval = setInterval(() => {
+    countdown--;
+    btn.innerHTML = `<i class="fas fa-arrow-left"></i> Back to Home (${countdown})`;
+
+    if (countdown <= 0) {
+      clearInterval(interval);
+      window.location.href = "/";
+    }
+  }, 1000);
+
     const astronaut = document.querySelector('.hero-image');
-    
-    astronaut.addEventListener('click', function() {
-      // Create confetti elements
-      for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.style.position = 'fixed';
-        confetti.style.width = '10px';
-        confetti.style.height = '10px';
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        confetti.style.borderRadius = '50%';
-        confetti.style.left = `${Math.random() * 100}vw`;
-        confetti.style.top = '-10px';
-        confetti.style.zIndex = '1000';
-        confetti.style.pointerEvents = 'none';
-        document.body.appendChild(confetti);
-        
-        // Animate confetti
-        const animation = confetti.animate([
-          { top: '-10px', opacity: 1 },
-          { top: `${Math.random() * 100 + 50}vh`, opacity: 0 }
+
+    astronaut.addEventListener('click', () => {
+      for (let i = 0; i < 40; i++) {
+        const c = document.createElement('div');
+        c.style.position = 'fixed';
+        c.style.width = '8px';
+        c.style.height = '8px';
+        c.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        c.style.borderRadius = '50%';
+        c.style.left = Math.random()*100 + 'vw';
+        c.style.top = '-10px';
+        document.body.appendChild(c);
+
+        c.animate([
+          { transform: 'translateY(0)', opacity: 1 },
+          { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
         ], {
-          duration: Math.random() * 3000 + 2000,
-          easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
-        });
-        
-        // Remove confetti after animation
-        animation.onfinish = () => confetti.remove();
+          duration: 2000 + Math.random()*2000
+        }).onfinish = () => c.remove();
       }
     });
   </script>
+
 </body>
 </html>
