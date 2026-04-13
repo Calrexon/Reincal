@@ -260,14 +260,14 @@
         // Quote
         async function displayRandomQuote() {
             try {
-                const res  = await fetch("https://danilxlo.vercel.app/api/quoteid");
+                const res  = await fetch("https://twaryapi-dusky.vercel.app/api/bible");
                 const json = await res.json();
                 const data = json.data;
                 document.getElementById("quote-text").innerText   = `"${data.quotes}"`;
                 document.getElementById("quote-author").innerText = `— ${data.author || "Unknown"}`;
             } catch {
-                document.getElementById("quote-text").innerText   = `"The only way to do great work is to love what you do."`;
-                document.getElementById("quote-author").innerText = "— Steve Jobs";
+                document.getElementById("quote-text").innerText   = `"I can do all things through Him who gives me strength."`;
+                document.getElementById("quote-author").innerText = "— Philippians 4:13";
             }
         }
         displayRandomQuote();
