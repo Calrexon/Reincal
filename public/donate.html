@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://dc.missuo.ru/file/1492188322108407973">
+  <title>Donate - Reincal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/donate.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="donate-ornament donate-ornament-1"></div>
+  <div class="donate-ornament donate-ornament-2"></div>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-container">
+        <a href="/" class="logo">
+          <img src="https://dc.missuo.ru/file/1493518251488051320" alt="Reincal Logo">
+          <span>Reincal</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="donate.html" class="nav-link active">Donate</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+
+          <div class="social-links">
+            <a href="https://discord.gg/7dBxFQcfwZ" class="social-link" target="_blank" rel="noopener noreferrer" title="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://twitter.com/therealrein_" class="social-link" target="_blank" rel="noopener noreferrer" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <button class="hamburger" title="Toggle menu" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="donate-section">
+    <div class="container">
+      <header class="donate-header" data-aos="fade-up">
+        <p class="donate-kicker">Support My Journey</p>
+        <h1>Choose Your Favorite Way to Donate</h1>
+        <p>
+          Every support helps me keep building tools, projects, and open-source work.
+          Pick the platform you like most and thank you so much.
+        </p>
+      </header>
+
+      <section class="donate-grid">
+        <article class="donate-card">
+          <div class="donate-icon"><i class="fas fa-mug-hot"></i></div>
+          <h2>Ko-fi</h2>
+          <p>Quick one-time support like buying me a coffee.</p>
+          <a class="donate-btn" href="https://ko-fi.com/raincal" target="_blank" rel="noopener noreferrer">Open Ko-fi</a>
+        </article>
+
+        <article class="donate-card">
+          <div class="donate-icon"><i class="fas fa-wallet"></i></div>
+          <h2>Saweria</h2>
+          <p>Perfect for local support from Indonesia.</p>
+          <a class="donate-btn" href="https://saweria.co/reincal" target="_blank" rel="noopener noreferrer">Open Saweria</a>
+        </article>
+
+        <article class="donate-card">
+          <div class="donate-icon"><i class="fas fa-qrcode"></i></div>
+          <h2>QRIS / E-Wallet</h2>
+          <p>Add your QR image or payment number here for direct support.</p>
+          <a class="donate-btn donate-btn-disabled" href="#" aria-disabled="true">Setup Soon</a>
+        </article>
+
+        <article class="donate-card">
+          <div class="donate-icon"><i class="fab fa-paypal"></i></div>
+          <h2>PayPal</h2>
+          <p>For international supporters who prefer PayPal.</p>
+          <a class="donate-btn donate-btn-disabled" href="#" aria-disabled="true">Setup Soon</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+</body>
+</html>

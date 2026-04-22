@@ -4,39 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="image/rein.png">
+  <link rel="icon" href="https://dc.missuo.ru/file/1492188322108407973">
   <title>Contact - Reincal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="css/contact.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="contact-ornament contact-ornament-1"></div>
+  <div class="contact-ornament contact-ornament-2"></div>
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container">
       <div class="navbar-container">
         <a href="/" class="logo">
-          <img src="image/rein.png" alt="Reincal Logo">
+          <img src="https://dc.missuo.ru/file/1493518251488051320" alt="Reincal Logo">
           <span>Reincal</span>
         </a>
         
         <div class="nav-links">
           <a href="index.html" class="nav-link">Home</a>
-          <a href="https://saweria.co/AlvinJumz" class="nav-link" target="_blank">Donate</a>
-          <a href="/contact" class="nav-link active">Contact</a>
+          <a href="donate.html" class="nav-link">Donate</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
           
           <div class="social-links">
-            <a href="https://discord.gg/" class="social-link" target="_blank">
+            <a href="https://discord.gg/" class="social-link" target="_blank" rel="noopener noreferrer" title="Discord">
               <i class="fab fa-discord"></i>
             </a>
-            <a href="https://twitter.com/therealrein_" class="social-link" target="_blank">
+            <a href="https://twitter.com/therealrein_" class="social-link" target="_blank" rel="noopener noreferrer" title="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
         </div>
         
-        <button class="hamburger">
+        <button class="hamburger" title="Toggle menu" aria-label="Toggle menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -49,6 +51,7 @@
       <div class="contact-container">
         <div class="contact-info" data-aos="fade-right">
           <div class="contact-header">
+            <p class="contact-kicker">Let's build something</p>
             <h1>Get In Touch</h1>
             <p>Have a question or want to work together? Fill out the form or reach out directly through one of these methods.</p>
           </div>
@@ -60,7 +63,7 @@
               </div>
               <div class="contact-details">
                 <h3>Email Me</h3>
-                <a href="mailto:jackgrizz23@gmail.com">jackgrizz23@gmail.com</a> or <a href="mailto:zarcoxorp@gmail.com">zarcoxorp@gmail.com</a>
+                <a href="mailto:reincal@emailthing.xyz.com">reincal@emailthing.xyz</a> or <a href="mailto:reincalnatan@gmail.com">reincalnatan@gmail.com</a>
               </div>
             </div>
             
@@ -80,7 +83,7 @@
               </div>
               <div class="contact-details">
                 <h3>Twitter</h3>
-                <a href="https://twitter.com/ZarcoZxacy" target="_blank">@ZarcoZxacy</a>
+                <a href="https://twitter.com/therealrein_" target="_blank" rel="noopener noreferrer">@therealrein_</a>
               </div>
             </div>
           </div>
@@ -105,7 +108,7 @@
             
             <button type="submit" class="submit-btn">
               <span id="submit-text">Send Message</span>
-              <div class="loader" id="form-loader" style="display: none;"></div>
+              <div class="loader hidden" id="form-loader"></div>
             </button>
           </form>
         </div>
@@ -181,7 +184,7 @@
       const formData = new FormData(contactForm);
       
       // Send form data to FormSubmit
-      fetch('https://formsubmit.co/ajax/jackgrizz23@gmail.com', {
+      fetch('https://formsubmit.co/ajax/reincal@emailthing.xyz.com', {
         method: 'POST',
         body: formData
       })

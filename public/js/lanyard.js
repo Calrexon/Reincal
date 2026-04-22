@@ -124,7 +124,7 @@ function update_presence() {
       break;
     default:
       dotClass = "status-dot status-loading";
-      statusText = "Loading...";
+      statusText = "Loading... (probably offline)";
   }
   
   statusDot.className = dotClass;
